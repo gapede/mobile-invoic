@@ -1,0 +1,85 @@
+/* Torn paper effect for invoice box */
+.torn-paper {
+    width: 100%;
+    height: 32px;
+    background: linear-gradient(135deg, #fff 75%, #e0e0e0 100%);
+    position: relative;
+    overflow: hidden;
+}
+.torn-paper:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 32px;
+    background: url('data:image/svg+xml;utf8,<svg width="400" height="32" xmlns="http://www.w3.org/2000/svg"><path d="M0,16 Q20,32 40,16 Q60,0 80,16 Q100,32 120,16 Q140,0 160,16 Q180,32 200,16 Q220,0 240,16 Q260,32 280,16 Q300,0 320,16 Q340,32 360,16 Q380,0 400,16 L400,32 L0,32 Z" fill="%23fff" stroke="%23e0e0e0" stroke-width="2"/></svg>') repeat-x;
+    background-size: 400px 32px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Invoice enhancement styles */
+.invoice-box {
+    background: linear-gradient(135deg, #f9fafb 80%, #e3e9f7 100%);
+    border: 2px solid #e0e0e0;
+    box-shadow: 0 4px 24px rgba(26,35,126,0.10);
+    border-radius: 0 0 18px 18px;
+    padding: 24px 20px 18px 20px;
+    position: relative;
+    overflow: hidden;
+    animation: fadeInInvoice 0.7s;
+}
+@keyframes fadeInInvoice {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.invoice-title {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #1a237e;
+    letter-spacing: 1px;
+    margin-bottom: 18px;
+    text-align: center;
+    text-shadow: 0 2px 8px #e3e9f7;
+}
+.invoice-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-size: 1.05em;
+    border-bottom: 1px dashed #e0e0e0;
+    padding-bottom: 6px;
+}
+.invoice-row:last-child {
+    border-bottom: none;
+}
+.invoice-label {
+    color: #607d8b;
+    font-weight: 500;
+}
+.invoice-value {
+    font-weight: bold;
+    color: #263238;
+}
+.invoice-stamp {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    background: #43a047;
+    color: #fff;
+    font-size: 0.95em;
+    font-weight: bold;
+    padding: 6px 18px;
+    border-radius: 18px;
+    box-shadow: 0 2px 8px rgba(67,160,71,0.12);
+    transform: rotate(-8deg);
+    letter-spacing: 1px;
+    opacity: 0.92;
+    z-index: 2;
+}
+.invoice-logo {
+    display: block;
+    margin: 0 auto 18px auto;
+    max-width: 90px;
+    opacity: 0.85;
+}
